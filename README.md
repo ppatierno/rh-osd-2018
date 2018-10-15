@@ -95,8 +95,11 @@ Getting an output describing what was defined in the `KafkaUser` resource.
 {"version":1,"acls":[{"principal":"User:CN=my-user","permissionType":"Allow","operation":"Read","host":"*"},{"principal":"User:CN=my-user","permissionType":"Allow","operation":"Describe","host":"*"},{"principal":"User:CN=my-user","permissionType":"Allow","operation":"Write","host":"*"}]}
 ```
 
+## Deploying demo producer/consumer applications
 
+Producer and consumer applications can be deployed as following:
 
+    oc apply -f 08-demo-application.yaml
 
-
-
+Both clients use the same created user in order to authenticate to the Kafka cluster over TLS.
+They exchange messages through the created topic.

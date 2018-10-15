@@ -7,7 +7,11 @@ spec:
     replicas: 3
     listeners:
       plain: {}
-      tls: {}
+      tls:
+        authentication:
+          type: tls
+    authorization:
+      type: simple
     readinessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
