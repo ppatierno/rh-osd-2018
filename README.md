@@ -1,4 +1,4 @@
-# AAMQ Streams on OpenShift demo
+# AMQ Streams on OpenShift demo
 
 AMQ Streams on OpenShift demo for the Red Hat Open Source Day 2018 (Milan and Rome).
 
@@ -15,7 +15,7 @@ Other then the Cluster Operator itself, a bunch of CRDs (Custom Resource Definit
 * `Kafka` : a Kafka cluster (with Zookeeper ensemble)
 * `KafkaConnect` : a Kafka Connect cluster
 * `KafkaConnectS2I` : a Kafka Connect cluster with OpenShift S2I support for adding plugins connectors
-* `KafkaMirrorMaker` : a Kafka Mirror Maker replica
+* `KafkaMirrorMaker` : a Kafka Mirror Maker deployment
 * `KafkaTopic` : a Kafka topic
 * `KafkaUser`: a Kafka user (with related ACLs)
 
@@ -81,7 +81,7 @@ It can be created like this:
 
 For TLS authentication, the User Operator will create an X509 certificate for that user and sign it using an internal client Certificate Authority. The client also needs to trust the broker's certificates, so we need to ensure the certificate of the CA which signed the broker certificate is in the clients' trust stores.
 Other than that, the User Operator creates the related ACL rules on Zookeeper.
-It is possible to check that running a shell on one of the Zookeeper nodes first.
+It is possible to check it running a shell on one of the Zookeeper nodes first.
 
     oc exec -it my-cluster-zookeeper-0 -c zookeeper -- bin/zookeeper-shell.sh localhost:21810
 
