@@ -29,6 +29,16 @@ It can be deployed like this:
 
     oc apply -f 02-kafka-cluster.yaml
 
+Check the cluster related pods are starting
+
+    watch oc get pods
+
+Check the created `StatefulSets`, the `Secrets` and the `Services`
+
+    oc get statefulsets
+    oc get secrets -l app=strimzi
+    oc get services
+
 It deployes a Kafka cluster (alongside with a Zookeeper ensemble) and two other operators:
 
 * Topic Operator: for handling Kafka topics (creation, deletion, ...) via a `KafkaTopic` resource

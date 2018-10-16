@@ -22,11 +22,11 @@ spec:
           - name: TOPIC
             value: my-topic
           - name: DELAY_MS
-            value: "1000"
+            value: "250"
           - name: LOG_LEVEL
             value: "INFO"
           - name: MESSAGE_COUNT
-            value: "1000"
+            value: "10000"
           - name: "CA_CRT"
             valueFrom:
               secretKeyRef:
